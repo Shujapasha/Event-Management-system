@@ -1,0 +1,44 @@
+a:3:{s:4:"time";i:1657183857;s:3:"ttl";i:900;s:4:"data";a:50:{s:15:"absent_auto_sms";s:1:"1";s:7:"address";s:27:"19-KM Ferozpur Road, Lahore";s:10:"attendance";s:7:"subject";s:23:"attendance_notification";s:4:"none";s:32:"attendance_notification_template";s:1:"0";s:21:"attendance_smsgateway";s:1:"0";s:10:"automation";s:1:"5";s:21:"auto_invoice_generate";s:1:"0";s:24:"auto_update_notification";s:1:"0";s:13:"backend_theme";s:9:"whiteblue";s:12:"bank_account";s:47:"Bank Al-Habib Collection A/C No. 0080 900959-01";s:9:"book_fine";s:2:"30";s:14:"captcha_status";s:1:"1";s:12:"company_code";s:5:"AFASI";s:13:"currency_code";s:3:"Pkr";s:15:"currency_symbol";s:2:"Rs";s:15:"discount_credit";s:3:"163";s:14:"discount_debit";s:3:"315";s:19:"discount_feetypesID";s:2:"17";s:5:"email";s:21:"faheem.ch08@gmail.com";s:8:"ex_class";s:1:"0";s:6:"footer";s:37:"Copyright &copy; Afro-Asian Institute";s:17:"frontendorbackend";s:2:"NO";s:14:"frontend_theme";s:7:"default";s:16:"google_analytics";s:0:"";s:12:"invoice_date";s:10:"15-07-2022";s:8:"language";s:7:"english";s:15:"language_status";s:1:"0";s:10:"marktypeID";s:1:"0";s:6:"mark_1";s:1:"1";s:4:"note";s:1:"1";s:5:"phone";s:11:"03209507664";s:5:"photo";s:132:"80cce204bed332b831db90dcb526dec9724cd80ca995be7b0c9ee7eda553d5990b89be0ee7a447663d10babb2c8c16bd663bac2d6aa19e5a35d4017cecd84c57.png";s:12:"profile_edit";s:1:"0";s:13:"purchase_code";s:15:"devevxgc_inilab";s:17:"purchase_username";s:12:"waqasmaqbool";s:20:"recaptcha_secret_key";s:0:"";s:18:"recaptcha_site_key";s:0:"";s:15:"record_per_page";s:2:"30";s:11:"school_type";s:9:"classbase";s:11:"school_year";s:1:"1";s:5:"sname";s:19:"AFRO-ASIAN INSTITUE";s:18:"student_cr_account";s:3:"163";s:17:"student_ID_format";s:1:"1";s:9:"time_zone";s:12:"Asia/Karachi";s:17:"transaction_title";s:55:"Transaction to be posted through Alfalah Transact only.";s:13:"updateversion";s:3:"4.6";s:13:"voucher_email";s:25:"accounts@afroasian.edu.pk";s:13:"voucher_notes";s:3444:"<table border="0" width="100%" cellspacing="1">
+                                                <tr>
+                                                    <td valign="top"><span class="c38"></span></td>
+
+                                                    <td align="left">
+                                                        <br><p class="c50"><span class="c38"><b>Note: </b></span></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td valign="top">
+                                                        <p class="c50"><span class="c38">1. </span></p>
+                                                    </td>
+                                                    <td align="left"><span class="c38">The fee voucher will not be accepted after due date.</span></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td valign="top"><span class="c38">2.</span></td>
+                                                    <td align="left">
+                                                        <p class="c50"><span class="c38">The late payment charges will be levied after due date and can not be waived.</span></p>
+                                                    </td>
+                                                </tr>
+                                                 <tr>
+                                                    <td valign="top"><span class="c38">3.</span></td>
+                                                    <td align="left">
+                                                        <p class="c50"><span class="c38">All fees paid are non-refundable and can be changed without prior notice.</span></p>
+                                                    </td>
+                                                </tr>
+                                        
+                                                <tr>
+                                                    <td valign="top"><span class="c38">4.</span></td>
+                                                    <td align="left">
+                                                        <p class="c50"><span class="c38">Withholding tax @5% leviable effective July 01, 2013 under section 236I of the ITO, 2001 where annual fee exceeds Rs. 200,000.</span></p>
+                                                    </td>
+                                                </tr>
+                                                
+                                                
+                                                <tr>
+                                                    <td valign="top"><span class="c38">5.</span></td>
+                                                    <td align="left">
+                                                        <p class="c50"><span class="c38">These funds are intended for Afro-Asian Institute (Pvt) Ltd Account# 0029-0980-012372-01-0 held with Allama Iqbal Town Branch, Lahore.</span></p>
+                                                    </td>
+                                                </tr>
+                                                
+                                                </table>";s:8:"weekends";s:3:"0,6";}}
