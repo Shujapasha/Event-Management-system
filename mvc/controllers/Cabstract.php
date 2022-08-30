@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Abstract extends Admin_Controller {
+class Cabstract extends Admin_Controller {
     /*
     | -----------------------------------------------------
     | PRODUCT NAME: 	INILABS SCHOOL MANAGEMENT SYSTEM
@@ -16,14 +16,14 @@ class Abstract extends Admin_Controller {
     */
     function __construct() {
         parent::__construct();
-        $this->load->model("abstract_m");
+        $this->load->model("cabstract_m");
         $language = $this->session->userdata('lang');
-        $this->lang->load('abstract', $language);
+        $this->lang->load('cabstract', $language);
     }
 
     public function index() {
-        $this->data['abstracts'] = $this->abstract_m->get_abstract();
-        $this->data["subview"] = "/abstract/index";
+        $this->data['cabstracts'] = $this->cabstract_m->get_cabstract();
+        $this->data["subview"] = "/cabstract/index";
         $this->load->view('_layout_main', $this->data);
     }
 
@@ -31,13 +31,17 @@ class Abstract extends Admin_Controller {
         $rules = array(
             array(
                 'field' => 'title',
-                'label' => $this->lang->line("abstract_title"),
+                'label' => $this->lang->line("cabstract_title"),
                 'rules' => 'trim|required|xss_clean|max_length[128]'
             )
         );
         return $rules;
     }
 
+    public function submit(){
+        $this->data["subview"] = "/abstract/submit";
+        $this->load->view('_layout_frontend', $this->data);
+    }
     public function add() {
         $this->data['headerassets'] = array(
             'css' => array(
@@ -53,18 +57,18 @@ class Abstract extends Admin_Controller {
             $rules = $this->rules();
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == FALSE) {
-                $this->data["subview"] = "/abstract/add";
+                $this->data["subview"] = "/cabstract/add";
                 $this->load->view('_layout_main', $this->data);
             } else {
                 $array = array(
                     "title" => $this->input->post("title"),
                 );
-                $this->abstract_m->insert_abstract($array);
+                $this->cabstract_m->insert_cabstract($array);
                 $this->session->set_flashdata('success', $this->lang->line('menu_success'));
-                redirect(base_url("abstract/index"));
+                redirect(base_url("cabstract/index"));
             }
         } else {
-            $this->data["subview"] = "/abstract/add";
+            $this->data["subview"] = "/cabstract/add";
             $this->load->view('_layout_main', $this->data);
         }
     }
@@ -82,25 +86,25 @@ class Abstract extends Admin_Controller {
         );
         $id = htmlentities(escapeString($this->uri->segment(3)));
         if((int)$id) {
-            $this->data['abstract'] = $this->abstract_m->get_single_abstract(array('abstractID' => $id));
-            if($this->data['abstract']) {
+            $this->data['cabstract'] = $this->cabstract_m->get_single_cabstract(array('abstractID' => $id));
+            if($this->data['cabstract']) {
                 if($_POST) {
                     $rules = $this->rules();
                     $this->form_validation->set_rules($rules);
                     if ($this->form_validation->run() == FALSE) {
-                        $this->data["subview"] = "/abstract/edit";
+                        $this->data["subview"] = "/cabstract/edit";
                         $this->load->view('_layout_main', $this->data);
                     } else {
                         $array = array(
                             "title" => $this->input->post("title")
                         );
 
-                        $this->abstract_m->update_abstract($array, $id);
+                        $this->cabstract_m->update_cabstract($array, $id);
                         $this->session->set_flashdata('success', $this->lang->line('menu_success'));
-                        redirect(base_url("abstract/index"));
+                        redirect(base_url("cabstract/index"));
                     }
                 } else {
-                    $this->data["subview"] = "/abstract/edit";
+                    $this->data["subview"] = "/cabstract/edit";
                     $this->load->view('_layout_main', $this->data);
                 }
             } else {
@@ -116,9 +120,9 @@ class Abstract extends Admin_Controller {
     public function view() {
         $id = htmlentities(escapeString($this->uri->segment(3)));
         if((int)$id) {
-            $this->data['abstract'] = $this->abstract_m->get_single_abstract(array('abstractID' => $id));
-            if($this->data['abstract']) {
-                $this->data["subview"] = "/abstract/view";
+            $this->data['cabstract'] = $this->cabstract_m->get_single_cabstract(array('abstractID' => $id));
+            if($this->data['cabstract']) {
+                $this->data["subview"] = "/cabstract/view";
                 $this->load->view('_layout_main', $this->data);
             } else {
                 $this->data["subview"] = "error";
@@ -129,33 +133,30 @@ class Abstract extends Admin_Controller {
             $this->load->view('_layout_main', $this->data);
         }
     }
-    public function submit(){
-        $this->data["subview"] = "/abstract/submit";
-        $this->load->view('_layout_frontend', $this->data);
-    }
+
     public function delete() {
         $id = htmlentities(escapeString($this->uri->segment(3)));
         if((int)$id) {
-            $this->data['abstract'] = $this->abstract_m->get_single_abstract(array('abstractID' => $id));
-            if(count($this->data['abstract'])) {
-                $this->abstract_m->delete_abstract($id);
+            $this->data['cabstract'] = $this->cabstract_m->get_single_cabstract(array('abstractID' => $id));
+            if(count($this->data['cabstract'])) {
+                $this->cabstract_m->delete_cabstract($id);
                 $this->session->set_flashdata('success', $this->lang->line('menu_success'));
-                redirect(base_url("abstract/index"));
+                redirect(base_url("cabstract/index"));
             } else {
-                redirect(base_url("abstract/index"));
+                redirect(base_url("cabstract/index"));
             }
         } else {
-            redirect(base_url("abstract/index"));
+            redirect(base_url("cabstract/index"));
         }
     }
 
     public function print_preview() {
         $id = htmlentities(escapeString($this->uri->segment(3)));
         if((int)$id) {
-            $this->data['abstract'] = $this->abstract_m->get_single_abstract(array('abstractID' => $id));
-            if($this->data['abstract']) {
+            $this->data['cabstract'] = $this->cabstract_m->get_single_cabstract(array('abstractID' => $id));
+            if($this->data['cabstract']) {
                 $this->data['panel_title'] = $this->lang->line('panel_title');
-                $this->reportPDF($this->data, '/abstract/print_preview');
+                $this->reportPDF($this->data, '/cabstract/print_preview');
             } else {
                 $this->data["subview"] = "error";
                 $this->load->view('_layout_main', $this->data);
@@ -168,13 +169,13 @@ class Abstract extends Admin_Controller {
     public function send_mail() {
         $id = $this->input->post('id');
         if ((int)$id) {
-            $this->data['abstract'] = $this->abstract_m->get_single_abstract(array('abstractID' => $id));
-            if($this->data['abstract']) {
+            $this->data['cabstract'] = $this->cabstract_m->get_single_cabstract(array('abstractID' => $id));
+            if($this->data['cabstract']) {
                 $email = $this->input->post('to');
                 $subject = $this->input->post('subject');
                 $message = $this->input->post('message');
 
-                $this->reportSendToMail($this->data['abstract'], '/abstract/print_preview', $email, $subject, $message);
+                $this->reportSendToMail($this->data['cabstract'], '/cabstract/print_preview', $email, $subject, $message);
             } else {
                 $this->data["subview"] = "error";
                 $this->load->view('_layout_main', $this->data);

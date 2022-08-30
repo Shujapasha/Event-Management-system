@@ -58,7 +58,22 @@ class Conference extends Admin_Controller {
         );
         return $rules;
     }
+    protected function payment_rules() {
+        $rules = array(
+            array(
+                'field' => 'title',
+                'label' => $this->lang->line("user_title"),
+                'rules' => 'trim|xss_clean|max_length[128]'
+            ),
+            array(
+                'field' => 'file',
+                'label' => $this->lang->line("user_file"),
+                'rules' => 'trim|xss_clean|max_length[200]|callback_unique_document_upload'
+            )
+        );
 
+        return $rules;
+    }
     protected function register_rules() {
         $rules = array(
             array(
@@ -156,9 +171,10 @@ class Conference extends Admin_Controller {
                     "created"               => date('Y-m-d H:i:s'),
                 );
                 $this->registrations_m->insert_registrations($array);
+                $lastId = $this->db->insert_id();
                 $this->conferencecreatemail($array,$this->data['conference'],$this->session->userdata('email'));
                 $this->session->set_flashdata('success', $this->lang->line('menu_success'));
-                redirect(base_url("dashboard/user"));
+                redirect(base_url("conference/payment/$lastId"));
             }
         } else {
             $this->data["subview"] = "/conference/register";
@@ -166,7 +182,41 @@ class Conference extends Admin_Controller {
         }
     }
 
-    
+    public function payment() {
+        $id = htmlentities(escapeString($this->uri->segment(3)));
+         $this->data['registrations'] = $this->registrations_m->get_single_registrations(array('registrationsID ' => $id));
+        if($_POST) {
+
+            $rules = $this->payment_rules();
+
+            $this->form_validation->set_rules($rules);
+
+             
+            if ($this->form_validation->run() == FALSE) {
+
+                
+                $this->data["subview"] = "/conference/payment";
+                $this->load->view('_layout_frontend', $this->data);
+            } else {
+
+
+                $file_name = $this->upload_data['file']['file_name'];
+               
+                $array =   array('receipt' => $file_name ); 
+
+              
+             $tt =    $this->registrations_m->update_registrations($array, $id);
+                
+                $this->session->set_flashdata('success', $this->lang->line('menu_success'));
+                redirect(base_url("dashboard/user"));
+            }
+        }
+        else{
+        $this->data["subview"] = "/conference/payment";
+        $this->load->view('_layout_frontend', $this->data); 
+        }
+        
+    }
 
     public function add() {
         $this->data['headerassets'] = array(
@@ -315,4 +365,44 @@ class Conference extends Admin_Controller {
         }
 
     }
+    public function unique_document_upload() {
+
+        $new_file = '';
+        if($_FILES["file"]['name'] !="") {
+            $file_name = $_FILES["file"]['name'];
+
+            $random = random19();
+            $makeRandom = hash('sha512', $random.(strtotime(date('Y-m-d H:i:s'))). config_item("encryption_key"));
+            $file_name_rename = $makeRandom;
+            $explode = explode('.', $file_name);
+
+            if(customCompute($explode) >= 2) {
+
+                $new_file = $file_name_rename.'.'.end($explode);
+                $config['upload_path'] = "./uploads/documents";
+                $config['allowed_types'] = "gif|jpg|png|jpeg|pdf|doc|xml|docx|GIF|JPG|PNG|JPEG|PDF|DOC|XML|DOCX|xls|xlsx|txt|ppt|csv";
+                $config['file_name'] = $new_file;
+                $config['max_size'] = '5120';
+                $config['max_width'] = '10000';
+                $config['max_height'] = '10000';
+                $this->load->library('upload', $config);
+                if(!$this->upload->do_upload("file")) {
+                 
+                    $this->form_validation->set_message("unique_document_upload", $this->upload->display_errors());
+                    return FALSE;
+                } else {
+                    $this->upload_data['file'] =  $this->upload->data();
+             
+                    return TRUE;
+                }
+            } else {
+                $this->form_validation->set_message("unique_document_upload", "Invalid file");
+                return FALSE;
+            }
+        } else {
+            $this->form_validation->set_message("unique_document_upload", "The file is required.");
+            return FALSE;
+        }
+    }
 }
+
