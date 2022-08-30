@@ -26,27 +26,37 @@
                         </span>
                     </div>
 
-                    <div class="form-group <?=form_error('amount_pkr') ? 'has-error' : '' ?>" >
+                    <div class="form-group <?=form_error('amount_type') ? 'has-error' : '' ?>" >
                         <label for="title" class="col-sm-2 control-label">
-                            Amount PKR <span class="text-red">*</span>
+                            Amount Type <span class="text-red">*</span>
                         </label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="amount_pkr" name="amount_pkr" value="<?=set_value('amount_pkr')?>" >
+
+                              <?php
+                                $array = array();
+                                $array['']      = 'Please Select';
+                                $array['PKR']   = 'PKR';
+                                $array['USD']   = 'USD';
+
+                                
+                                echo form_dropdown("amount_type", $array, set_value("amount_type"), "id='amount_type' class='form-control'");
+                            ?>
+                             
                         </div>
                         <span class="col-sm-4 control-label">
-                            <?php echo form_error('amount_pkr'); ?>
+                            <?php echo form_error('amount_type'); ?>
                         </span>
                     </div>
 
-                    <div class="form-group <?=form_error('amount_usd') ? 'has-error' : '' ?>" >
+                    <div class="form-group <?=form_error('amount') ? 'has-error' : '' ?>" >
                         <label for="title" class="col-sm-2 control-label">
-                            Amount USD <span class="text-red">*</span>
+                            Amount <span class="text-red">*</span>
                         </label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="amount_usd" name="amount_usd" value="<?=set_value('amount_usd')?>" >
+                            <input type="text" class="form-control" id="amount" name="amount" value="<?=set_value('amount')?>" >
                         </div>
                         <span class="col-sm-4 control-label">
-                            <?php echo form_error('amount_usd'); ?>
+                            <?php echo form_error('amount'); ?>
                         </span>
                     </div>
 

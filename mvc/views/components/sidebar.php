@@ -54,12 +54,11 @@
 									</div>
 									<!--end:Menu item-->
 									<!--begin:Menu item-->
-									<div class="menu-item pt-5">
-										
-									</div>
+									 
 									<!--end:Menu item-->
 									<!--begin:Menu item-->
-									<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<a class="menu-link" href="<?php echo base_url('conference/register');?>">
+									<div  class="menu-item menu-accordion">
 										<!--begin:Menu link-->
 										<span class="menu-link active">
 											<span class="menu-icon">
@@ -78,6 +77,7 @@
 										<!--end:Menu link-->
 										
 									</div>
+								</a>
 									<!--end:Menu item-->
 									<!--begin:Menu item-->
 									<div data-kt-menu-trigger="click" class="menu-item menu-accordion">

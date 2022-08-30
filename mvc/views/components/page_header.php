@@ -1,5 +1,8 @@
 
 <?php 
+ if ($this->session->userdata('usertypeID') == 18 ) {
+               redirect(base_url('dashboard/user'));
+            }
 $pdpd   =   $this->session->userdata('rec_pdate');
     if (!$pdpd) {
       $this->db->where('id', session_id());

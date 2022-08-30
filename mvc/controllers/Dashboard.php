@@ -325,6 +325,8 @@
 
         public function index()
         {
+
+           
             $this->data['headerassets'] = [
                 'css' => [
                     'assets/fullcalendar/lib/cupertino/jquery-ui.min.css',
@@ -360,6 +362,21 @@
 
             $this->data["subview"] = "dashboard/index";
             $this->load->view('_layout_main', $this->data);
+        }
+
+        public function user()
+        {
+
+           
+           
+
+           
+            $this->_profile();
+
+          
+
+            $this->data["subview"] = "dashboard/user";
+            $this->load->view('_layout_frontend', $this->data);
         }
 
         private function _tails()

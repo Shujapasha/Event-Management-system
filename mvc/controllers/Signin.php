@@ -3,15 +3,15 @@
 class Signin extends Admin_Controller {
 /*
 | -----------------------------------------------------
-| PRODUCT NAME: 	INILABS SCHOOL MANAGEMENT SYSTEM
+| PRODUCT NAME:     INILABS SCHOOL MANAGEMENT SYSTEM
 | -----------------------------------------------------
-| AUTHOR:			INILABS TEAM
+| AUTHOR:           INILABS TEAM
 | -----------------------------------------------------
-| EMAIL:			info@inilabs.net
+| EMAIL:            info@inilabs.net
 | -----------------------------------------------------
-| COPYRIGHT:		RESERVED BY INILABS IT
+| COPYRIGHT:        RESERVED BY INILABS IT
 | -----------------------------------------------------
-| WEBSITE:			http://inilabs.net
+| WEBSITE:          http://inilabs.net
 | -----------------------------------------------------
 */
     public function __construct()
@@ -58,65 +58,65 @@ class Signin extends Admin_Controller {
     }
 
     protected function rules_cpassword() {
-		$rules = array(
-				array(
-					'field' => 'old_password',
-					'label' => $this->lang->line('old_password'),
-					'rules' => 'trim|required|max_length[40]|min_length[4]|xss_clean|callback_old_password_unique'
-				),
-				array(
-					'field' => 'new_password',
-					'label' => $this->lang->line('new_password'),
-					'rules' => 'trim|required|max_length[40]|min_length[4]|xss_clean'
-				),
-				array(
-					'field' => 're_password',
-					'label' => $this->lang->line('re_password'),
-					'rules' => 'trim|required|max_length[40]|min_length[4]|matches[new_password]|xss_clean'
-				)
-			);
-		return $rules;
-	}
+        $rules = array(
+                array(
+                    'field' => 'old_password',
+                    'label' => $this->lang->line('old_password'),
+                    'rules' => 'trim|required|max_length[40]|min_length[4]|xss_clean|callback_old_password_unique'
+                ),
+                array(
+                    'field' => 'new_password',
+                    'label' => $this->lang->line('new_password'),
+                    'rules' => 'trim|required|max_length[40]|min_length[4]|xss_clean'
+                ),
+                array(
+                    'field' => 're_password',
+                    'label' => $this->lang->line('re_password'),
+                    'rules' => 'trim|required|max_length[40]|min_length[4]|matches[new_password]|xss_clean'
+                )
+            );
+        return $rules;
+    }
 
-	public function index() {
-        // if ( $this->data['siteinfos']->captcha_status == 0 ) {
-        //     $this->load->library('recaptcha');
-        //     $this->data['recaptcha'] = [
-        //         'widget' => $this->recaptcha->getWidget(),
-        //         'script' => $this->recaptcha->getScriptTag(),
-        //     ];
-        // }
+    public function index() {
+        if ( $this->data['siteinfos']->captcha_status == 0 ) {
+            $this->load->library('recaptcha');
+            $this->data['recaptcha'] = [
+                'widget' => $this->recaptcha->getWidget(),
+                'script' => $this->recaptcha->getScriptTag(),
+            ];
+        }
 
-        // $this->data['form_validation'] = 'No';
-        // $this->signin_m->loggedin() == FALSE || redirect(base_url('dashboard/index'));
-        // if($_POST) {
-        //     $this->_setCookie();
-        //     $rules = $this->rules();
-        //     $this->form_validation->set_rules($rules);
-        //     if ($this->form_validation->run() == FALSE) {
-        //         $this->data['form_validation'] = validation_errors();
-        //         $this->data["subview"]         = "signin/index";
-        //         $this->load->view('_layout_signin', $this->data);
-        //     } else {
-        //         $signinManager = $this->_signInManager();
+        $this->data['form_validation'] = 'No';
+        $this->signin_m->loggedin() == FALSE || redirect(base_url('dashboard/index'));
+        if($_POST) {
+            $this->_setCookie();
+            $rules = $this->rules();
+            $this->form_validation->set_rules($rules);
+            if ($this->form_validation->run() == FALSE) {
+                $this->data['form_validation'] = validation_errors();
+                $this->data["subview"]         = "signin/signin";
+                $this->load->view('_layout_signup', $this->data);
+            } else {
+                $signinManager = $this->_signInManager();
 
-        //         if($signinManager['return']) {
+                if($signinManager['return']) {
                     
-        //             redirect(base_url('dashboard/index'));
-        //         } else {
-        //             $this->data['form_validation'] = $signinManager['message'];
-        //             $this->data["subview"]         = "signin/index";
-        //             $this->load->view('_layout_signin', $this->data);
-        //         }
-        //     }
-        // } else {
-        //     $this->data["subview"]         = "signin/index";
-        //     $this->load->view('_layout_signin', $this->data);
-        //     $this->session->sess_destroy();
-        // }
-        $this->data["subview"] = "signin/signin";
-        $this->load->view('_layout_signup', $this->data); 
-	}
+                    redirect(base_url('dashboard/index'));
+                } else {
+                    $this->data['form_validation'] = $signinManager['message'];
+                    $this->data["subview"]         = "signin/signin";
+                    $this->load->view('_layout_signup', $this->data);
+                }
+            }
+        } else {
+            $this->data["subview"]         = "signin/signin";
+            $this->load->view('_layout_signup', $this->data);
+            $this->session->sess_destroy();
+        }
+        // $this->data["subview"] = "signin/signin";
+        // $this->load->view('_layout_signup', $this->data); 
+    }
     public function signup()
     {   
         if($_POST) {

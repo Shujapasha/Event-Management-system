@@ -26,8 +26,8 @@
                             <tr>
                                 <th class="col-sm-2"><?=$this->lang->line('slno')?></th>
                                 <th class="col-sm-2"><?=$this->lang->line('regtype_title')?></th>
-                                <th class="col-sm-2">Amount in PKR</th>
-                                <th class="col-sm-2">Amount in USD</th> 
+                                <th class="col-sm-2">Amount Type</th>
+                                <th class="col-sm-2">Amount</th> 
                                 <?php if(permissionChecker('regtype_edit') || permissionChecker('regtype_delete') || permissionChecker('regtype_view')) { ?>
                                     <th class="col-sm-2"><?=$this->lang->line('action')?></th>
                                 <?php } ?>
@@ -42,11 +42,11 @@
                                     <td data-title="<?=$this->lang->line('regtype_title')?>">
                                         <?=$regtype->regtype;?>
                                     </td>
-                                    <td data-title="Amount PKR">
-                                        <?=$regtype->amount_pkr;?>
+                                    <td data-title="Amount Type">
+                                        <?=$regtype->amount_type;?>
                                     </td>
-                                    <td data-title="Amount USD">
-                                        <?=$regtype->amount_usd;?>
+                                    <td data-title="Amount">
+                                        <?=$regtype->amount;?>
                                     </td>
                                     <?php if(permissionChecker('regtype_edit') || permissionChecker('regtype_delete') || permissionChecker('regtype_view')) { ?>
 

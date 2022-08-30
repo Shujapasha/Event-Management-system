@@ -90,6 +90,38 @@ class User extends Admin_Controller {
 		return $rules;
 	}
 
+	protected function register_rules() {
+		$rules = array(
+			array(
+				'field' => 'name',
+				'label' => $this->lang->line("user_name"),
+				'rules' => 'trim|required|xss_clean|max_length[60]'
+			),  
+			array(
+				'field' => 'email',
+				'label' => $this->lang->line("user_email"),
+				'rules' => 'trim|required|max_length[40]|valid_email|xss_clean|callback_unique_email'
+			),
+
+			array(
+				'field' => 'sex',
+				'label' => $this->lang->line("user_sex"),
+				'rules' => 'trim|required|max_length[10]|xss_clean'
+			),
+			array(
+				'field' => 'phone',
+				'label' => $this->lang->line("user_phone"),
+				'rules' => 'trim|required|min_length[5]|max_length[25]|xss_clean'
+			), 
+			array(
+				'field' => 'password',
+				'label' => $this->lang->line("user_password"),
+				'rules' => 'trim|required|min_length[4]|max_length[40]|xss_clean'
+			),
+		);
+		return $rules;
+	}
+
 	public function send_mail_rules() {
 		$rules = array(
 			array(
@@ -378,42 +410,40 @@ class User extends Admin_Controller {
 				'assets/datepicker/datepicker.js'
 			)
 		);
-		$this->data['usertypes'] = $this->usertype_m->get_usertype();
+		//$this->data['usertypes'] = $this->usertype_m->get_usertype();
 		if($_POST) {
-			$rules = $this->rules();
+			$rules = $this->register_rules();
 			$this->form_validation->set_rules($rules);
 			if ($this->form_validation->run() == FALSE) {
-				$this->data["subview"] = "user/add";
-				$this->load->view('_layout_main', $this->data);
+				$this->data["subview"] = "user/register";
+				$this->load->view('_layout_signup', $this->data);
 			} else {
 				$array["name"] = $this->input->post("name");
-				$array["dob"] = date("Y-m-d", strtotime($this->input->post("dob")));
-				$array["sex"] = $this->input->post("sex");
-				$array["religion"] = $this->input->post("religion");
+				$array["dob"] = date("Y-m-d");
+				$array["sex"] = $this->input->post("sex"); 
 				$array["email"] = $this->input->post("email");
-				$array["phone"] = $this->input->post("phone");
-				$array["address"] = $this->input->post("address");
-				$array["jod"] = date("Y-m-d", strtotime($this->input->post("jod")));
-				$array["username"] = $this->input->post("username");
+				$array["phone"] = $this->input->post("phone"); 
+				$array["jod"] = date("Y-m-d");
+				$array["username"] = $this->input->post("email");
 				$array["password"] = $this->user_m->hash($this->input->post("password"));
-				$array["usertypeID"] = 9;
+				$array["usertypeID"] = 18;
 				$array["create_date"] = date("Y-m-d h:i:s");
 				$array["modify_date"] = date("Y-m-d h:i:s");
 				$array["create_userID"] = 999999;
 				$array["create_username"] = 'self';
 				$array["create_usertype"] = 'Subscriber';
 				$array["active"] = 1;
-				$array['photo'] = $this->upload_data['file']['file_name'];
+				//$array['photo'] = $this->upload_data['file']['file_name'];
 
 				$this->usercreatemail($this->input->post('email'), $this->input->post('username'), $this->input->post('password'));
 
 				$this->user_m->insert_user($array);
 				$this->session->set_flashdata('success', $this->lang->line('menu_success'));
-				redirect(base_url("user/wellcome"));
+				redirect(base_url("signin/index"));
 			}
 		} else {
 			$this->data["subview"] = "user/register";
-			$this->load->view('_layout_main_plain', $this->data);
+			$this->load->view('_layout_signup', $this->data);
 		}
 	}
 	public function new_register() {

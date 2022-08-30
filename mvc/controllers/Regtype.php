@@ -35,13 +35,13 @@ class Regtype extends Admin_Controller {
                 'rules' => 'trim|required|xss_clean|max_length[128]'
             ),
             array(
-                'field' => 'amount_usd',
-                'label' => 'Amount in USD',
-                'rules' => 'trim|numeric|required|xss_clean|max_length[128]'
+                'field' => 'amount_type',
+                'label' => 'Amount Type',
+                'rules' => 'trim|required|xss_clean|max_length[128]'
             ),
             array(
-                'field' => 'amount_pkr',
-                'label' => 'Amount in PKR',
+                'field' => 'amount',
+                'label' => 'Amount',
                 'rules' => 'trim|numeric|required|xss_clean|max_length[128]'
             )
         );
@@ -66,11 +66,11 @@ class Regtype extends Admin_Controller {
                 $this->data["subview"] = "/regtype/add";
                 $this->load->view('_layout_main', $this->data);
             } else {
-                $array = array(
+                 $array = array(
                             "regtype"       => $this->input->post("regtype"),
-                            "amount_pkr"    => $this->input->post("amount_pkr"),
-                            "amount_usd"    => $this->input->post("amount_usd")
-                );
+                            "amount_type"    => $this->input->post("amount_type"),
+                            "amount"    => $this->input->post("amount")
+                        );
                 $this->regtype_m->insert_regtype($array);
                 $this->session->set_flashdata('success', $this->lang->line('menu_success'));
                 redirect(base_url("regtype/index"));
@@ -105,8 +105,8 @@ class Regtype extends Admin_Controller {
                     } else {
                         $array = array(
                             "regtype"       => $this->input->post("regtype"),
-                            "amount_pkr"    => $this->input->post("amount_pkr"),
-                            "amount_usd"    => $this->input->post("amount_usd")
+                            "amount_type"    => $this->input->post("amount_type"),
+                            "amount"    => $this->input->post("amount")
                         );
 
                         $this->regtype_m->update_regtype($array, $id);

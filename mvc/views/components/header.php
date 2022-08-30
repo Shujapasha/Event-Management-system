@@ -17,6 +17,8 @@
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
 		<link href="<?php echo base_url('assets/frontend/plugins/global/plugins.bundle.css')?>" rel="stylesheet" type="text/css" />
 		<link href="<?php echo base_url('assets/frontend/css/style.bundle.css')?>" rel="stylesheet" type="text/css" />
+		
+        <script type="text/javascript" src="<?php echo base_url('assets/inilabs/jquery.min.js'); ?>"></script>
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->

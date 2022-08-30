@@ -11,15 +11,12 @@
                     );
         return $arr; 
     }
-    function get_student_status_type()
+    function get_status_type()
     {
         $arr = array(
-                    0       => 'Inactive/Stuck Off',
-                    1       => 'Active',
-                    2       => 'Semester Freeze',
-                    3       => 'Left',
-                    4       => 'Terminate',
-                    5       => 'Alumni',
+                    0       => 'Pending',
+                    1       => 'Approved',
+                    2       => 'Rejected', 
                     );
         return $arr; 
     }

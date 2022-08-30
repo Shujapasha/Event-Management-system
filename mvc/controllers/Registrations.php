@@ -17,14 +17,55 @@ class Registrations extends Admin_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model("registrations_m");
+        $this->load->model("regtype_m");
+        $this->load->model("category_m");
         $language = $this->session->userdata('lang');
         $this->lang->load('registrations', $language);
     }
 
     public function index() {
+
+        $this->data["regtype"] = pluck($this->regtype_m->get_regtype(),
+            "obj",
+            "regtypeID");
+        $this->data["category"] = pluck($this->category_m->get_category(),
+            "obj",
+            "categoryID");
         $this->data['registrationss'] = $this->registrations_m->get_registrations();
         $this->data["subview"] = "/registrations/index";
         $this->load->view('_layout_main', $this->data);
+    }
+
+    
+    public function active() {
+        if(permissionChecker('user_edit')) {
+            $id = $this->input->post('id');
+            $status = $this->input->post('status');
+            if($id != '' && $status != '') {
+                if((int)$id) {
+                    $user = $this->registrations_m->get_single_registrations(array('registrationsID' => $id));
+                    if(customCompute($user)) {
+                        if($status == 'chacked') {
+                            $this->registrations_m->update_registrations(array('registrations_status' => 1), $id);
+                            echo 'Success';
+                        } elseif($status == 'unchacked') {
+                            $this->registrations_m->update_registrations(array('registrations_status' => 0), $id);
+                            echo 'Success';
+                        } else {
+                            echo "Error";
+                        }
+                    } else {
+                        echo 'Error';
+                    }
+                } else {
+                    echo "Error";
+                }
+            } else {
+                echo "Error";
+            }
+        } else {
+            echo "Error";
+        }
     }
 
     protected function rules() {
