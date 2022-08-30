@@ -438,3 +438,168 @@ ERROR - 2022-08-30 16:30:54 --> 404 Page Not Found: Cabstract/assets
 ERROR - 2022-08-30 16:31:27 --> 404 Page Not Found: Cabstract/assets
 ERROR - 2022-08-30 16:31:27 --> 404 Page Not Found: Cabstract/assets
 ERROR - 2022-08-30 16:31:27 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:03:32 --> Severity: Warning --> mysqli::real_connect(): (HY000/1049): Unknown database 'admin_portal' C:\wamp64\www\portal\main\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-08-30 17:03:32 --> Unable to connect to the database
+ERROR - 2022-08-30 17:06:43 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:06:43 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:06:43 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:06:56 --> Severity: error --> Exception: syntax error, unexpected 'Abstract' (T_ABSTRACT), expecting identifier (T_STRING) C:\wamp64\www\portal\mvc\controllers\Abstract.php 3
+ERROR - 2022-08-30 17:07:02 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:07:02 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:07:02 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:07:57 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:07:57 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:07:57 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:07:59 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:07:59 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:07:59 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:08:05 --> 404 Page Not Found: Conference/assets
+ERROR - 2022-08-30 17:08:05 --> 404 Page Not Found: Conference/assets
+ERROR - 2022-08-30 17:08:05 --> 404 Page Not Found: Conference/assets
+ERROR - 2022-08-30 17:09:57 --> 404 Page Not Found: Conference/assets
+ERROR - 2022-08-30 17:09:57 --> 404 Page Not Found: Conference/assets
+ERROR - 2022-08-30 17:09:57 --> 404 Page Not Found: Conference/assets
+ERROR - 2022-08-30 17:09:59 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:09:59 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:09:59 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:10:01 --> 404 Page Not Found: Conference/assets
+ERROR - 2022-08-30 17:10:01 --> 404 Page Not Found: Conference/assets
+ERROR - 2022-08-30 17:10:01 --> 404 Page Not Found: Conference/assets
+ERROR - 2022-08-30 17:10:02 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:10:02 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:10:02 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:10:04 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:10:04 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:10:04 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:10:18 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:10:18 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:10:18 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:11:06 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:11:06 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:11:06 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:27:56 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:27:56 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:27:56 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:27:58 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:27:58 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:27:58 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:28:38 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:28:38 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:28:38 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:29:05 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:29:05 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:29:05 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:29:05 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:29:05 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:29:05 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:29:28 --> Could not find the language line "user_file"
+ERROR - 2022-08-30 17:29:28 --> Severity: Notice --> Undefined index: file C:\wamp64\www\portal\mvc\controllers\Cabstract.php 256
+ERROR - 2022-08-30 17:29:28 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:29:28 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:29:28 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:30:45 --> Could not find the language line "user_file"
+ERROR - 2022-08-30 17:30:45 --> Severity: Notice --> Undefined index: file C:\wamp64\www\portal\mvc\controllers\Cabstract.php 258
+ERROR - 2022-08-30 17:30:45 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:30:45 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:30:45 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:31:05 --> Could not find the language line "user_file"
+ERROR - 2022-08-30 17:31:05 --> Severity: Notice --> Undefined index: file C:\wamp64\www\portal\mvc\controllers\Cabstract.php 258
+ERROR - 2022-08-30 17:31:05 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:31:05 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:31:05 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:31:08 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:31:08 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:31:08 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:31:32 --> Could not find the language line "user_file"
+ERROR - 2022-08-30 17:31:32 --> Severity: Notice --> Undefined index: file C:\wamp64\www\portal\mvc\controllers\Cabstract.php 258
+ERROR - 2022-08-30 17:31:33 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:31:33 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:31:33 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:32:58 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:32:58 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:32:58 --> 404 Page Not Found: Cabstract/assets
+ERROR - 2022-08-30 17:33:25 --> Could not find the language line "user_file"
+ERROR - 2022-08-30 17:35:10 --> Could not find the language line "user_file"
+ERROR - 2022-08-30 17:35:10 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:35:10 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:35:10 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:35:21 --> Could not find the language line "user_file"
+ERROR - 2022-08-30 17:35:22 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:35:22 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:35:22 --> 404 Page Not Found: Dashboard/assets
+ERROR - 2022-08-30 17:44:03 --> Could not find the language line "menu_Registrations"
+ERROR - 2022-08-30 17:44:03 --> Could not find the language line "menu_Registration Type"
+ERROR - 2022-08-30 17:44:03 --> Could not find the language line "menu_Conference"
+ERROR - 2022-08-30 17:44:03 --> Could not find the language line "menu_Abstract"
+ERROR - 2022-08-30 17:44:03 --> Could not find the language line "menu_cabstract"
+ERROR - 2022-08-30 17:44:07 --> Could not find the language line "menu_Registrations"
+ERROR - 2022-08-30 17:44:07 --> Could not find the language line "menu_Registration Type"
+ERROR - 2022-08-30 17:44:07 --> Could not find the language line "menu_Conference"
+ERROR - 2022-08-30 17:44:07 --> Could not find the language line "menu_Abstract"
+ERROR - 2022-08-30 17:44:07 --> Could not find the language line "menu_cabstract"
+ERROR - 2022-08-30 17:44:07 --> Severity: Notice --> Undefined variable: category C:\wamp64\www\portal\mvc\views\cabstract\index.php 57
+ERROR - 2022-08-30 17:44:07 --> Severity: Notice --> Trying to get property 'category' of non-object C:\wamp64\www\portal\mvc\views\cabstract\index.php 57
+ERROR - 2022-08-30 17:44:07 --> Could not find the language line "user_status"
+ERROR - 2022-08-30 17:44:12 --> Query error: Table 'admin_portal.student' doesn't exist - Invalid query: SELECT `name`, `photo`
+FROM `student`
+WHERE `studentID` = '622'
+ERROR - 2022-08-30 17:45:06 --> Could not find the language line "menu_Registrations"
+ERROR - 2022-08-30 17:45:06 --> Could not find the language line "menu_Registration Type"
+ERROR - 2022-08-30 17:45:06 --> Could not find the language line "menu_Conference"
+ERROR - 2022-08-30 17:45:06 --> Could not find the language line "menu_Abstract"
+ERROR - 2022-08-30 17:45:06 --> Could not find the language line "menu_cabstract"
+ERROR - 2022-08-30 17:45:06 --> Could not find the language line "user_status"
+ERROR - 2022-08-30 17:45:12 --> Query error: Table 'admin_portal.student' doesn't exist - Invalid query: SELECT `name`, `photo`
+FROM `student`
+WHERE `studentID` = '622'
+ERROR - 2022-08-30 17:45:14 --> Could not find the language line "menu_Registrations"
+ERROR - 2022-08-30 17:45:14 --> Could not find the language line "menu_Registration Type"
+ERROR - 2022-08-30 17:45:14 --> Could not find the language line "menu_Conference"
+ERROR - 2022-08-30 17:45:14 --> Could not find the language line "menu_Abstract"
+ERROR - 2022-08-30 17:45:14 --> Could not find the language line "menu_cabstract"
+ERROR - 2022-08-30 17:45:14 --> Could not find the language line "user_status"
+ERROR - 2022-08-30 17:45:19 --> Query error: Table 'admin_portal.student' doesn't exist - Invalid query: SELECT `name`, `photo`
+FROM `student`
+WHERE `studentID` = '622'
+ERROR - 2022-08-30 17:48:38 --> Could not find the language line "menu_Registrations"
+ERROR - 2022-08-30 17:48:38 --> Could not find the language line "menu_Registration Type"
+ERROR - 2022-08-30 17:48:38 --> Could not find the language line "menu_Conference"
+ERROR - 2022-08-30 17:48:38 --> Could not find the language line "menu_Abstract"
+ERROR - 2022-08-30 17:48:38 --> Could not find the language line "menu_cabstract"
+ERROR - 2022-08-30 17:48:38 --> Could not find the language line "user_status"
+ERROR - 2022-08-30 17:49:36 --> Could not find the language line "menu_Registrations"
+ERROR - 2022-08-30 17:49:36 --> Could not find the language line "menu_Registration Type"
+ERROR - 2022-08-30 17:49:36 --> Could not find the language line "menu_Conference"
+ERROR - 2022-08-30 17:49:36 --> Could not find the language line "menu_Abstract"
+ERROR - 2022-08-30 17:49:36 --> Could not find the language line "menu_cabstract"
+ERROR - 2022-08-30 17:49:36 --> Could not find the language line "user_status"
+ERROR - 2022-08-30 17:49:53 --> Could not find the language line "menu_Registrations"
+ERROR - 2022-08-30 17:49:53 --> Could not find the language line "menu_Registration Type"
+ERROR - 2022-08-30 17:49:53 --> Could not find the language line "menu_Conference"
+ERROR - 2022-08-30 17:49:53 --> Could not find the language line "menu_Abstract"
+ERROR - 2022-08-30 17:49:53 --> Could not find the language line "menu_cabstract"
+ERROR - 2022-08-30 17:49:53 --> Could not find the language line "user_status"
+ERROR - 2022-08-30 17:50:23 --> Could not find the language line "menu_Registrations"
+ERROR - 2022-08-30 17:50:23 --> Could not find the language line "menu_Registration Type"
+ERROR - 2022-08-30 17:50:23 --> Could not find the language line "menu_Conference"
+ERROR - 2022-08-30 17:50:23 --> Could not find the language line "menu_Abstract"
+ERROR - 2022-08-30 17:50:23 --> Could not find the language line "menu_cabstract"
+ERROR - 2022-08-30 17:50:23 --> Could not find the language line "user_status"
+ERROR - 2022-08-30 17:50:28 --> Query error: Table 'admin_portal.student' doesn't exist - Invalid query: SELECT `name`, `photo`
+FROM `student`
+WHERE `studentID` = '622'
+ERROR - 2022-08-30 17:56:26 --> Could not find the language line "menu_Registrations"
+ERROR - 2022-08-30 17:56:26 --> Could not find the language line "menu_Registration Type"
+ERROR - 2022-08-30 17:56:26 --> Could not find the language line "menu_Conference"
+ERROR - 2022-08-30 17:56:26 --> Could not find the language line "menu_Abstract"
+ERROR - 2022-08-30 17:56:26 --> Could not find the language line "menu_cabstract"
+ERROR - 2022-08-30 17:56:26 --> Severity: error --> Exception: Call to undefined function word_limiter() C:\wamp64\www\portal\mvc\views\cabstract\index.php 63
+ERROR - 2022-08-30 17:58:39 --> Could not find the language line "menu_Registrations"
+ERROR - 2022-08-30 17:58:39 --> Could not find the language line "menu_Registration Type"
+ERROR - 2022-08-30 17:58:39 --> Could not find the language line "menu_Conference"
+ERROR - 2022-08-30 17:58:39 --> Could not find the language line "menu_Abstract"
+ERROR - 2022-08-30 17:58:39 --> Could not find the language line "menu_cabstract"
+ERROR - 2022-08-30 17:58:39 --> Could not find the language line "user_status"
+ERROR - 2022-08-30 17:58:44 --> Query error: Table 'admin_portal.student' doesn't exist - Invalid query: SELECT `name`, `photo`
+FROM `student`
+WHERE `studentID` = '622'

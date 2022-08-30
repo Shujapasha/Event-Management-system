@@ -331,6 +331,44 @@ class Admin_Controller extends MY_Controller {
             $this->email->send();
         }
     }
+ public function abstrachemail($data,$conference,$email) {
+        $this->load->model('emailsetting_m');
+        $emailSetting = $this->emailsetting_m->get_emailsetting();
+        $this->load->library('email');
+        $this->email->set_mailtype("html");
+
+        if(customCompute($emailSetting)) {
+            if($emailSetting->email_engine == 'smtp') {
+                $config = array(
+                    'protocol'  => 'smtp',
+                    'smtp_host' => $emailSetting->smtp_server,
+                    'smtp_port' => $emailSetting->smtp_port,
+                    'smtp_user' => $emailSetting->smtp_username,
+                    'smtp_pass' => $emailSetting->smtp_password,
+                    'mailtype'  => 'html',
+                    'charset'   => 'utf-8'
+                );
+                $this->email->initialize($config);
+                $this->email->set_newline("\r\n");
+            }
+        }
+
+        if($email) {
+            $this->email->from($this->data['siteinfos']->email, $this->data['siteinfos']->sname);
+            $this->email->to($email);
+            $this->email->subject('Conference Registeration');
+            $url = base_url();
+            $message = "<h2>Welcome to ".$this->data['siteinfos']->sname."</h2>
+            <p>You have successfully registered in the ".$conference->conference." conference. </p>
+             
+            <br>
+            <p>You will be confirmed for the ".$conference->conference." after payment verification.</p>
+            <p>Best Wishes,</p>
+            <p>The ".$this->data['siteinfos']->sname." Team</p>";
+            $this->email->message($message);
+            $this->email->send();
+        }
+    }
 
 	public function reportPDF($stylesheet=NULL, $data=NULL, $viewpath= NULL, $mode = 'view', $pagesize = 'a4', $pagetype='portrait', $header='', $footer='') {
 		$designType = 'LTR';

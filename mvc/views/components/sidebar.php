@@ -31,7 +31,8 @@
 								<!--begin::Menu-->
 								<div class="menu menu-column menu-rounded menu-sub-indention px-3" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
 									<!--begin:Menu item-->
-									<div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+									<a class="menu-link" href="<?php echo base_url('dashboard/user');?>">
+									<div   class="menu-item here show menu-accordion">
 										<!--begin:Menu link-->
 										<span class="menu-link">
 											<span class="menu-icon">
@@ -52,6 +53,7 @@
 										<!--end:Menu link-->
 										
 									</div>
+								</a>
 									<!--end:Menu item-->
 									<!--begin:Menu item-->
 									 
@@ -80,8 +82,8 @@
 								</a>
 									<!--end:Menu item-->
 									<!--begin:Menu item-->
-									<a href="<?php echo base_url('abstract/submit');?>" class="menu-link">
-									<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<a href="<?php echo base_url('cabstract/submit');?>" class="menu-link">
+									<div  class="menu-item menu-accordion">
 										<!--begin:Menu link-->
 										<span class="menu-link">
 											<span class="menu-icon">
@@ -112,7 +114,7 @@
 									<!--begin:Menu item-->
 									<div class="menu-item">
 										<!--begin:Menu link-->
-										<a class="menu-link" href="https://preview.keenthemes.com/html/metronic/docs">
+										<a class="menu-link" href="javascript:;">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
 												<span class="svg-icon svg-icon-2">
@@ -131,7 +133,7 @@
 									<!--begin:Menu item-->
 									<div class="menu-item">
 										<!--begin:Menu link-->
-										<a class="menu-link" href="https://preview.keenthemes.com/html/metronic/docs/getting-started/changelog">
+										<a class="menu-link" href="javascript:;">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/coding/cod003.svg-->
 												<span class="svg-icon svg-icon-2">
