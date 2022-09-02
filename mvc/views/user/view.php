@@ -1,5 +1,3 @@
-
-
 <div class="well">
     <div class="row">
         <div class="col-sm-6">

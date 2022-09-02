@@ -90,25 +90,16 @@ class Signin extends Admin_Controller {
         $this->data['form_validation'] = 'No';
         $this->signin_m->loggedin() == FALSE || redirect(base_url('dashboard/index'));
         if($_POST) {
-            $this->_setCookie();
-            $rules = $this->rules();
-            $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run() == FALSE) {
-                $this->data['form_validation'] = validation_errors();
-                $this->data["subview"]         = "signin/signin";
-                $this->load->view('_layout_signup', $this->data);
-            } else {
                 $signinManager = $this->_signInManager();
-
-                if($signinManager['return']) {
-                    
-                    redirect(base_url('dashboard/index'));
-                } else {
-                    $this->data['form_validation'] = $signinManager['message'];
-                    $this->data["subview"]         = "signin/signin";
-                    $this->load->view('_layout_signup', $this->data);
-                }
-            }
+                echo json_encode($signinManager);
+                // if($signinManager['return']) {
+                // redirect(base_url('dashboard/index'));
+                // } else {
+                //     $this->data['form_validation'] = $signinManager['message'];
+                //     $this->data["subview"]         = "signin/signin";
+                //     $this->load->view('_layout_signup', $this->data);
+                // }
+            
         } else {
             $this->data["subview"]         = "signin/signin";
             $this->load->view('_layout_signup', $this->data);
@@ -129,16 +120,15 @@ class Signin extends Admin_Controller {
                 // $this->usercreatemail($this->input->post('email'), $this->input->post('username'), $this->input->post('password'));
                 
                 $this->user_m->insert_user($array);
-                $this->session->set_flashdata('success', $this->lang->line('menu_success'));
-                redirect(base_url("signin/signin"));
+                echo json_encode($array);
+                //$this->session->set_flashdata('success', $this->lang->line('menu_success'));
+                //redirect(base_url("signin/signin"));
             }
         }
         else{
             $this->data["subview"] = "signin/signup";
         $this->load->view('_layout_signup', $this->data);
-        }
-        
-        
+        }  
     }
     public function signin()
     {
@@ -325,7 +315,7 @@ class Signin extends Admin_Controller {
             $returnArray = [ 'return' => false, 'message' => $returnArray['message'] ];
         }
 
-        return $returnArray;
+        return json_encode($returnArray);
     }
 
     private function _loginLog( $userTypeID, $userID )

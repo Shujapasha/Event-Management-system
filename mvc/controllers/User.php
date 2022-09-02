@@ -147,7 +147,12 @@ class User extends Admin_Controller {
 		);
 		return $rules;
 	}
-
+	public function profile(){
+		$id = $_SESSION['loginuserID'];
+		$this->data['userdetails'] = $this->user_m->get_single_user(array('userID' => $id));
+		$this->data["subview"] = "/user/profile";
+        $this->load->view('_layout_frontend', $this->data);
+	}
 	public function unique_data($data) {
 		if($data != '') {
 			if($data == '0') {
@@ -411,13 +416,8 @@ class User extends Admin_Controller {
 			)
 		);
 		//$this->data['usertypes'] = $this->usertype_m->get_usertype();
+		$returnArray = ' ';
 		if($_POST) {
-			$rules = $this->register_rules();
-			$this->form_validation->set_rules($rules);
-			if ($this->form_validation->run() == FALSE) {
-				$this->data["subview"] = "user/register";
-				$this->load->view('_layout_signup', $this->data);
-			} else {
 				$array["name"] = $this->input->post("name");
 				$array["dob"] = date("Y-m-d");
 				$array["sex"] = $this->input->post("sex"); 
@@ -435,16 +435,21 @@ class User extends Admin_Controller {
 				$array["active"] = 1;
 				//$array['photo'] = $this->upload_data['file']['file_name'];
 
-				$this->usercreatemail($this->input->post('email'), $this->input->post('username'), $this->input->post('password'));
+				// $this->usercreatemail($this->input->post('email'), $this->input->post('username'), $this->input->post('password'));
 
 				$this->user_m->insert_user($array);
-				$this->session->set_flashdata('success', $this->lang->line('menu_success'));
-				redirect(base_url("signin/index"));
-			}
+				$returnArray = [ 'return' => true, 'message' => 'Success' ];
+				echo json_encode($returnArray);
+				// $this->session->set_flashdata('success', $this->lang->line('menu_success'));
+				// redirect(base_url("signin/index"));
+			
 		} else {
 			$this->data["subview"] = "user/register";
 			$this->load->view('_layout_signup', $this->data);
+			//$returnArray = [ 'return' => false, 'message' => 'Something Worng' ];
 		}
+		
+		
 	}
 	public function new_register() {
 		$this->data["subview"] = "user/register";

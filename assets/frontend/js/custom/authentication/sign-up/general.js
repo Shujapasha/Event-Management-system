@@ -7,14 +7,21 @@ var KTSignupGeneral = function() {
         init: function() {
             e = document.querySelector("#kt_sign_up_form"), t = document.querySelector("#kt_sign_up_submit"), r = KTPasswordMeter.getInstance(e.querySelector('[data-kt-password-meter="true"]')), a = FormValidation.formValidation(e, {
                 fields: {
-                    "name": {
+                    name: {
                         validators: {
                             notEmpty: {
                                 message: "Name is required"
                             }
                         }
                     },
-                    "phone": {
+                    sex: {
+                        validators: {
+                            notEmpty: {
+                                message: "Select your gender"
+                            }
+                        }
+                    },
+                    phone: {
                         validators: {
                             notEmpty: {
                                 message: "Phone Number is required"
@@ -45,19 +52,6 @@ var KTSignupGeneral = function() {
                             }
                         }
                     },
-                    "confirm-password": {
-                        validators: {
-                            notEmpty: {
-                                message: "The password confirmation is required"
-                            },
-                            identical: {
-                                compare: function() {
-                                    return e.querySelector('[name="password"]').value
-                                },
-                                message: "The password and its confirm are not the same"
-                            }
-                        }
-                    },
                     toc: {
                         validators: {
                             notEmpty: {
@@ -81,8 +75,19 @@ var KTSignupGeneral = function() {
             }), t.addEventListener("click", (function(s) {
                 s.preventDefault(), a.revalidateField("password"), a.validate().then((function(a) {
                     "Valid" == a ? (t.setAttribute("data-kt-indicator", "on"), t.disabled = !0, setTimeout((function() {
-                        t.removeAttribute("data-kt-indicator"), t.disabled = !1, Swal.fire({
-                            text: "Your account created successfully!",
+                        t.removeAttribute("data-kt-indicator"), t.disabled = !1, $.ajax({
+                        type: 'POST',
+                        url: "register",
+                        data: {"name" : e.querySelector('[name="name"]').value,"sex" : e.querySelector('[name="sex"]').value, "phone" : e.querySelector('[name="phone"]').value, "email" : e.querySelector('[name="email"]').value,"password" : e.querySelector('[name="password"]').value},
+                        dataType: "json",
+                        success: function(data) {
+                            console.log(data);
+                           // $('#sectionID').html(data);
+                           var res = data;
+                           console.log(res);
+                           if(res.return){
+                            Swal.fire({
+                            text: "Your Account Created Successfully!",
                             icon: "success",
                             buttonsStyling: !1,
                             confirmButtonText: "Ok, got it!",
@@ -91,11 +96,25 @@ var KTSignupGeneral = function() {
                             }
                         }).then((function(t) {
                             if (t.isConfirmed) {
-                                e.reset(), r.reset();
-                                alert('I am alert');
+                                e.querySelector('[name="email"]').value = "", e.querySelector('[name="password"]').value = "";
+                                var i = 'signin/index';
+                                i && (location.href = jsbaseurl+i)
                             }
                         }))
-                    }), 1500)) : Swal.fire({
+                        }else{
+                            Swal.fire({
+                        text: "Sorry, Invalid details, please try again.",
+                        icon: "error",
+                        buttonsStyling: !1,
+                        confirmButtonText: "Ok, got it!",
+                        customClass: {
+                            confirmButton: "btn btn-primary"
+                        }
+                    })
+                        }
+                        }
+                        })
+                    }), 2e3)) : Swal.fire({
                         text: "Sorry, looks like there are some errors detected, please try again.",
                         icon: "error",
                         buttonsStyling: !1,

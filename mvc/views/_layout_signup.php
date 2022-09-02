@@ -12,6 +12,9 @@
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="<?php echo base_url('assets/frontend/plugins/global/plugins.bundle.css') ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url('assets/frontend/css/style.bundle.css') ?>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+    var jsbaseurl   =   '<?php echo base_url('/');?>';     
+    </script>
     <!--end::Global Stylesheets Bundle-->
 </head>
 
@@ -39,7 +42,7 @@
                         <!--end::Logo-->
                         <!--begin::Title-->
                         <h2 class="text-white fw-normal m-0">International Conference on Advances in Allied Health Sciences
-</h2>
+                        </h2>
                         <!--end::Title-->
                     </div>
                     <!--begin::Aside-->

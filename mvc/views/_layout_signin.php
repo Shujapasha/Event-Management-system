@@ -11,7 +11,9 @@
     <link href="<?php echo base_url('assets/css/style.bundlec7e5.css?v=7.1.1') ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url('assets/css/pages/login/login-4.css') ?>" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="<?php echo base_url() ?>assets/media/logos/icon.png" />
-
+    <script type="text/javascript">
+    var jsbaseurl   =   '<?php echo base_url('/');?>';     
+    </script>
 
 </head>
 
