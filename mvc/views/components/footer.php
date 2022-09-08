@@ -59,11 +59,16 @@
 <!--end::Scrolltop-->
 
 	<!--begin::Javascript-->
-	<script>var hostUrl = "<?php echo base_url('assets/frontend/index.html')?>";</script>
+
 	<!--begin::Global Javascript Bundle(used by all pages)-->
 	<script src="<?php echo base_url('assets/frontend/plugins/global/plugins.bundle.js')?>"></script>
 	<script src="<?php echo base_url('assets/frontend/js/scripts.bundle.js')?>"></script>
 	<!--end::Global Javascript Bundle-->
+	<script src="<?php echo base_url('assets/frontend/js/custom/authentication/registration/general.js')?>"></script>
+	<script src="<?php echo base_url('assets/frontend/js/custom/authentication/registration/payment.js')?>"></script>
+	<script src="<?php echo base_url('assets/frontend/js/custom/authentication/workshop/general.js')?>"></script>
+	<script src="<?php echo base_url('assets/frontend/js/custom/authentication/workshop/cabstract.js')?>"></script>
+	<script src="<?php echo base_url('assets/frontend/js/custom/authentication/workshop/payment.js')?>"></script>
 	<!--begin::Vendors Javascript(used by this page)-->
 	<script src="<?php echo base_url('assets/frontend/plugins/custom/fullcalendar/fullcalendar.bundle.js')?>"></script>
 	
@@ -73,6 +78,7 @@
 	<script src="<?php echo base_url('assets/frontend/js/widgets.bundle.js')?>"></script>
 	<script src="<?php echo base_url('assets/frontend/js/custom/widgets.js')?>"></script>
 	<script src="<?php echo base_url('assets/frontend/js/custom/apps/chat/chat.js')?>"></script>
+	
 	<script src="<?php echo base_url('assets/frontend/js/custom/utilities/modals/upgrade-plan.js')?>"></script>
 	<script src="<?php echo base_url('assets/frontend/js/custom/utilities/modals/create-app.js')?>"></script>
 	<script src="<?php echo base_url('assets/frontend/js/custom/utilities/modals/new-target.js')?>"></script>

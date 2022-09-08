@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-12">
     <!--begin::Form-->
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" id="kt_docs_formvalidation_cabstract">
         <!--begin::Heading-->
         <div class="text-center mb-11">
         <!--begin::Title-->
@@ -21,25 +21,19 @@
 
         <!--end::Col-->
         </div>
-        <!--end::Login options-->
-        <!--begin::Separator-->
-        <!-- <div class="separator separator-content my-14">
-        <span class="w-125px text-gray-500 fw-semibold fs-7">Or with email</span>
-        </div> -->
-        <!--end::Separator-->
 
         <!--begin::Input group=-->
         <div class="row mb-8">
-        <div class="col-lg-6">
+        <div class="col-lg-6 fv-row">
         <input type="text" placeholder="Name" name="fullName" autocomplete="off" class="form-control bg-transparent" />
 
         <?php
-            if(form_error('fullName'))
-                echo '<div class="fv-plugins-message-container invalid-feedback"><div data-field="text_input" data-validator="notEmpty">'. form_error('fullName'). "</div></div>";
-                else 
-            echo ""; ?>
+            // if(form_error('fullName'))
+            //     echo '<div class="fv-plugins-message-container invalid-feedback"><div data-field="text_input" data-validator="notEmpty">'. form_error('fullName'). "</div></div>";
+            //     else 
+            // echo ""; ?>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 fv-row">
         <input type="email" placeholder="Email" name="emailaddress" autocomplete="off" class="form-control bg-transparent" />
 
         <?php
@@ -50,7 +44,7 @@
         </div>
         </div>
         <div class="row mb-8">
-        <div class="col-lg-6">
+        <div class="col-lg-6 fv-row">
         <input type="text" placeholder="Title of Abstract" name="title" autocomplete="off" class="form-control bg-transparent" />
         <?php
             if(form_error('title'))
@@ -58,7 +52,7 @@
                 else 
             echo ""; ?>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 fv-row">
         <select class="form-select" data-control="select2" name="categoryID" data-placeholder="Select Category">
         <option></option>
          <?php foreach ($categorys as $c) { ?>
@@ -94,7 +88,7 @@
         </div>
         <!--begin::Submit button-->
         <div class="d-grid mb-10">
-        <button type="submit"  class="btn btn-primary">
+        <button type="submit"  class="btn btn-primary" id="kt_docs_formvalidation_submit_cabstract">
         <!--begin::Indicator label-->
         <span class="indicator-label">Submit</span>
         <!--end::Indicator label-->

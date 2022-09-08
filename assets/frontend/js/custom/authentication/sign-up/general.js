@@ -83,6 +83,7 @@ var KTSignupGeneral = function() {
                         success: function(data) {
                             console.log(data);
                            // $('#sectionID').html(data);
+                            //var res = JSON.parse(data);
                            var res = data;
                            console.log(res);
                            if(res.return){
@@ -103,7 +104,7 @@ var KTSignupGeneral = function() {
                         }))
                         }else{
                             Swal.fire({
-                        text: "Sorry, Invalid details, please try again.",
+                        text: res.error,
                         icon: "error",
                         buttonsStyling: !1,
                         confirmButtonText: "Ok, got it!",

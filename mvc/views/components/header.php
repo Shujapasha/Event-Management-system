@@ -21,6 +21,7 @@
             var jsbaseurl   =   '<?php echo base_url('/');?>';
             
         </script>
+        
         <script type="text/javascript" src="<?php echo base_url('assets/inilabs/jquery.min.js'); ?>"></script>
 		<!--end::Global Stylesheets Bundle-->
 	</head>

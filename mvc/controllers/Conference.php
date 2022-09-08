@@ -13,7 +13,7 @@ class Conference extends Admin_Controller {
     | -----------------------------------------------------
     | WEBSITE:			http://inilabs.net
     | -----------------------------------------------------
-    */
+    */  
     function __construct() {
         parent::__construct();
         $this->load->model("conference_m");
@@ -142,14 +142,9 @@ class Conference extends Admin_Controller {
         $this->data['categorys']    = $this->category_m->get_category();
 
         $this->data['regtypes']     = $this->regtype_m->get_regtype();
+        $returnArray = ' ';
         if($_POST) {
-            $rules = $this->register_rules();
-             
-            $this->form_validation->set_rules($rules);
-            if ($this->form_validation->run() == FALSE) {
-                $this->data["subview"] = "/conference/register";
-                $this->load->view('_layout_main', $this->data);
-            } else {
+                // var_dump($_POST); exit();
                 $array = array(
                     "registrations_status"  => 0, 
                     "userID"                => $this->session->userdata('loginuserID'), 
@@ -172,10 +167,12 @@ class Conference extends Admin_Controller {
                 );
                 $this->registrations_m->insert_registrations($array);
                 $lastId = $this->db->insert_id();
-                $this->conferencecreatemail($array,$this->data['conference'],$this->session->userdata('email'));
-                $this->session->set_flashdata('success', $this->lang->line('menu_success'));
-                redirect(base_url("conference/payment/$lastId"));
-            }
+                // $this->conferencecreatemail($array,$this->data['conference'],$this->session->userdata('email'));
+                $returnArray = [ 'return' => true, 'message' => 'Success', 'paymentid' => $lastId, ];
+                echo json_encode($returnArray);
+                // $this->session->set_flashdata('success', $this->lang->line('menu_success'));
+                // redirect(base_url("conference/payment/$lastId"));
+            
         } else {
             $this->data["subview"] = "/conference/register";
             $this->load->view('_layout_frontend', $this->data);
@@ -186,30 +183,18 @@ class Conference extends Admin_Controller {
         $id = htmlentities(escapeString($this->uri->segment(3)));
          $this->data['registrations'] = $this->registrations_m->get_single_registrations(array('registrationsID ' => $id));
         if($_POST) {
-
-            $rules = $this->payment_rules();
-
-            $this->form_validation->set_rules($rules);
-
-             
-            if ($this->form_validation->run() == FALSE) {
-
-                
-                $this->data["subview"] = "/conference/payment";
-                $this->load->view('_layout_frontend', $this->data);
-            } else {
-
-
+                 
+                $this->unique_document_upload();
                 $file_name = $this->upload_data['file']['file_name'];
-               
                 $array =   array('receipt' => $file_name ); 
-
-              
-             $tt =    $this->registrations_m->update_registrations($array, $id);
                 
-                $this->session->set_flashdata('success', $this->lang->line('menu_success'));
-                redirect(base_url("dashboard/user"));
-            }
+                $tt =    $this->registrations_m->update_registrations($array, $id);
+                
+                $returnArray = [ 'return' => true, 'message' => 'Success' ];
+                echo json_encode($returnArray);
+                // $this->session->set_flashdata('success', $this->lang->line('menu_success'));
+                // redirect(base_url("dashboard/user"));
+            
         }
         else{
         $this->data["subview"] = "/conference/payment";

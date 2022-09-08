@@ -95,28 +95,28 @@ class User extends Admin_Controller {
 			array(
 				'field' => 'name',
 				'label' => $this->lang->line("user_name"),
-				'rules' => 'trim|required|xss_clean|max_length[60]'
+				'rules' => 'trim|required|xss_clean|max_length[60]|strip_tags'
 			),  
 			array(
 				'field' => 'email',
 				'label' => $this->lang->line("user_email"),
-				'rules' => 'trim|required|max_length[40]|valid_email|xss_clean|callback_unique_email'
+				'rules' => 'trim|required|max_length[40]|valid_email|xss_clean|callback_unique_email|strip_tags'
 			),
 
 			array(
 				'field' => 'sex',
 				'label' => $this->lang->line("user_sex"),
-				'rules' => 'trim|required|max_length[10]|xss_clean'
+				'rules' => 'trim|required|max_length[10]|xss_clean|strip_tags'
 			),
 			array(
 				'field' => 'phone',
 				'label' => $this->lang->line("user_phone"),
-				'rules' => 'trim|required|min_length[5]|max_length[25]|xss_clean'
+				'rules' => 'trim|required|min_length[5]|max_length[25]|xss_clean|strip_tags'
 			), 
 			array(
 				'field' => 'password',
 				'label' => $this->lang->line("user_password"),
-				'rules' => 'trim|required|min_length[4]|max_length[40]|xss_clean'
+				'rules' => 'trim|required|min_length[4]|max_length[40]|xss_clean|strip_tags'
 			),
 		);
 		return $rules;
@@ -418,6 +418,13 @@ class User extends Admin_Controller {
 		//$this->data['usertypes'] = $this->usertype_m->get_usertype();
 		$returnArray = ' ';
 		if($_POST) {
+				$rules = $this->register_rules();
+			$this->form_validation->set_rules($rules);
+			if ($this->form_validation->run() == FALSE) {
+
+				$returnArray = [ 'return' => false, 'message' => 'Invalid Details', 'error' => strip_tags(validation_errors()) ];
+				echo json_encode($returnArray);
+			} else {
 				$array["name"] = $this->input->post("name");
 				$array["dob"] = date("Y-m-d");
 				$array["sex"] = $this->input->post("sex"); 
@@ -434,7 +441,7 @@ class User extends Admin_Controller {
 				$array["create_usertype"] = 'Subscriber';
 				$array["active"] = 1;
 				//$array['photo'] = $this->upload_data['file']['file_name'];
-
+				//$this->unique_email();
 				// $this->usercreatemail($this->input->post('email'), $this->input->post('username'), $this->input->post('password'));
 
 				$this->user_m->insert_user($array);
@@ -443,10 +450,12 @@ class User extends Admin_Controller {
 				// $this->session->set_flashdata('success', $this->lang->line('menu_success'));
 				// redirect(base_url("signin/index"));
 			
-		} else {
+		}
+		}
+		 else {
 			$this->data["subview"] = "user/register";
 			$this->load->view('_layout_signup', $this->data);
-			//$returnArray = [ 'return' => false, 'message' => 'Something Worng' ];
+			
 		}
 		
 		

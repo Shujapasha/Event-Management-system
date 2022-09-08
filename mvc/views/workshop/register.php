@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-lg-12">
          <!--begin::Form-->
-<form class="form w-100" novalidate="novalidate" method="post" id="kt_reg_form">
+<form class="form w-100" novalidate="novalidate" method="post" id="kt_workshop_form">
 <!--begin::Heading-->
 <div class="text-center mb-11">
 <!--begin::Title-->
-<h1 class="text-dark fw-bolder mb-3">Registration Form</h1>
+<h1 class="text-dark fw-bolder mb-3">Workshop Form</h1>
 <!--end::Title-->
 <!--begin::Subtitle-->
-<div class="text-gray-500 fw-semibold fs-6"><?php echo $conference->conference;?></div>
+<div class="text-gray-500 fw-semibold fs-6">International Conference on Advances in Allied Health Sciences</div>
 <!--end::Subtitle=-->
 </div>
 <!--begin::Heading-->
@@ -31,11 +31,11 @@
 <div class="row mb-8 fv-row">
 <!--begin::Name-->
 <div class="col-lg-8 fv-row">
-<select id="regtype_tt" class="form-control form-select"   name="regtypeID" data-placeholder="Select Type of Registration" >
-<option>Please Select</option>
+<select id="workshoptype_tt" class="form-control form-select"   name="workshoptypeID" data-placeholder="Select Type of Workshop" >
+<option>Please Select workshop type</option>
 <?php 
-foreach ($regtypes as $r) {?>
-<option data-amount="<?php echo $r->amount;?>"  data-amount_type="<?php echo $r->amount_type;?>" value="<?php echo $r->regtypeID;?>"><?php echo $r->regtype;?></option>
+foreach ($workshoptype as $r) {?>
+<option data-amount="<?php echo $r->amount;?>"  data-amount_type="<?php echo $r->amount_type;?>" value="<?php echo $r->workshoptypeID;?>"><?php echo $r->workshoptype;?></option>
 <?php }?>
 </select>
 <?php
@@ -93,10 +93,10 @@ foreach ($regtypes as $r) {?>
 <div class="col-lg-6 fv-row">
 <input type="text" placeholder="Email" name="email_address" autocomplete="off" class="form-control bg-transparent" />
 <?php
-// if(form_error('email_address'))
-// echo '<div class="fv-plugins-message-container invalid-feedback"><div data-field="text_input" data-validator="notEmpty">'. form_error('email_address'). "</div></div>";
-// else 
-// echo ""; ?>
+if(form_error('email_address'))
+echo '<div class="fv-plugins-message-container invalid-feedback"><div data-field="text_input" data-validator="notEmpty">'. form_error('email_address'). "</div></div>";
+else 
+echo ""; ?>
 </div>
 </div>
 <div class="row mb-8">
@@ -170,9 +170,9 @@ echo form_dropdown("nationality", $country, set_value("nationality"), "id='natio
 
 <!--begin::Submit button-->
 <div class="d-grid mb-10">
-<button type="submit" id="kt_reg_submit" value="register" class="btn btn-primary">
+<button type="submit" id="kt_workshop_submit" value="register" class="btn btn-primary">
 <!--begin::Indicator label-->
-<span class="indicator-label">Register</span>
+<span class="indicator-label">Apply For Workshop</span>
 <!--end::Indicator label-->
 <!--begin::Indicator progress-->
 <span class="indicator-progress">Please wait... 
@@ -190,7 +190,7 @@ echo form_dropdown("nationality", $country, set_value("nationality"), "id='natio
     </div>
 </div>
 <script type="text/javascript">
-$('#regtype_tt').change(function(){
+$('#workshoptype_tt').change(function(){
 
 var amount          =  $(this).find(':selected').data('amount');
 var amount_type     =  $(this).find(':selected').data('amount_type');

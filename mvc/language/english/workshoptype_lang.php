@@ -1,9 +1,9 @@
 <?php
 
-$lang['panel_title'] = "Workshop";
-$lang['add_title'] = "Add a Workshop";
+$lang['panel_title'] = "Workshoptype";
+$lang['add_title'] = "Add a Workshoptype";
 $lang['slno'] = "#";
-$lang['workshop_title'] = "Title";
+$lang['workshoptype_title'] = "Title";
 $lang['action'] = "Action";
 
 $lang['view'] = 'View';
@@ -14,8 +14,8 @@ $lang['pdf_preview'] = 'PDF Preview';
 $lang["mail"] = "Send Pdf to Mail";
 
 
-$lang['add_workshop'] = 'Add Workshop';
-$lang['update_workshop'] = 'Update Workshop';
+$lang['add_workshoptype'] = 'Add Workshoptype';
+$lang['update_workshoptype'] = 'Update Workshoptype';
 
 $lang['to'] = 'To';
 $lang['subject'] = 'Subject';

@@ -19,11 +19,11 @@
 			<!--begin::Body-->
 			<div class="card-body">
 				<a href="#" class="card-title fw-bold text-muted text-hover-primary fs-4 mx-2">Your Details</a>
-				<p class="text-dark-75 fw-semibold fs-5 mx-2 mt-2">Name:<span class="fw-bold text-primary "> <?=$registrations->first_name?> <?=$registrations->last_name?></span></p>
-				<p class="text-dark-75 fw-semibold fs-5 mx-2">Email :<span class="fw-bold text-primary"> <?=$registrations->email_address?></span></p>
-				<p class="text-dark-75 fw-semibold fs-5 mx-2">Phone: <span class="fw-bold text-primary">  <?=$registrations->phone_number?></span></p>
-				<p class="text-dark-75 fw-semibold fs-5 mx-2">Abstract: <span class="fw-bold text-primary">   <?=$registrations->abstract_title?></span></p>
-				<p class="text-dark-75 fw-semibold fs-5 mx-2">Amount:  <span class="fw-bold text-primary">   <?=$registrations->amount?> <?=$registrations->amount_type?></span></p>
+				<p class="text-dark-75 fw-semibold fs-5 mx-2 mt-2">Name:<span class="fw-bold text-primary "> <?=$workshops->first_name?> <?=$workshops->last_name?></span></p>
+				<p class="text-dark-75 fw-semibold fs-5 mx-2">Email :<span class="fw-bold text-primary"> <?=$workshops->email_address?></span></p>
+				<p class="text-dark-75 fw-semibold fs-5 mx-2">Phone: <span class="fw-bold text-primary">  <?=$workshops->phone_number?></span></p>
+				<p class="text-dark-75 fw-semibold fs-5 mx-2">Abstract: <span class="fw-bold text-primary">   <?=$workshops->abstract_title?></span></p>
+				<p class="text-dark-75 fw-semibold fs-5 mx-2">Amount:  <span class="fw-bold text-primary">   <?=$workshops->amount?> <?=$workshops->amount_type?></span></p>
 				
 			</div>
 			<!--end::Body-->
@@ -38,7 +38,7 @@
 
 
 <!--begin::Form-->
-<form id="kt_docs_formvalidation_image_input" enctype="multipart/form-data"  class="form" action="#" autocomplete="off">
+<form id="kt_docs_formvalidation_image_input_workshop" enctype="multipart/form-data"  class="form" action="#" autocomplete="off">
     <!--begin::Input group-->
     <div class="fv-row mb-7">
         <!--begin::Label-->
@@ -83,7 +83,7 @@
     <!--end::Input group-->
 
     <!--begin::Actions-->
-    <button id="kt_docs_formvalidation_image_input_submit" type="submit" class="btn btn-primary">
+    <button id="kt_docs_formvalidation_image_input_submit_workshop" type="submit" class="btn btn-primary">
         <span class="indicator-label">
             Upload
         </span>

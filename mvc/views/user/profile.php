@@ -54,12 +54,12 @@
 		<!--begin::Input group-->
 		<div class="row mb-7">
 		<!--begin::Label-->
-		<label class="col-lg-4 fw-semibold text-muted">Mailing Address</label>
-		<!--end::Label-->
+<!-- 		<label class="col-lg-4 fw-semibold text-muted">Gender</label>
+ -->		<!--end::Label-->
 		<!--begin::Col-->
-		<div class="col-lg-8">
-			<a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">Germany</a>
-		</div>
+		<!-- <div class="col-lg-8">
+			<a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary"><?=$userdetails->sex?></a>
+		</div> -->
 		<!--end::Col-->
 		</div>
 		<!--end::Input group-->
@@ -82,7 +82,7 @@
 			<div class="fw-semibold">
 				<h4 class="text-gray-900 fw-bold">We need your attention!</h4>
 				<div class="fs-6 text-gray-700">Your payment was declined. To start using tools, please 
-				<a class="fw-bold" href="billing.html">Add Payment Method</a>.</div>
+				<a class="fw-bold" href="#">Add Payment Method</a>.</div>
 			</div>
 			<!--end::Content-->
 		</div>

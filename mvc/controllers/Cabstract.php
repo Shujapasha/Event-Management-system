@@ -82,8 +82,7 @@ class Cabstract extends Admin_Controller {
              
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() == FALSE) {
-                $this->data["subview"] = "/cabstract/submit";
-                $this->load->view('_layout_main', $this->data);
+                
             } else {
                   $file_name = $this->upload_data['file']['file_name'];
                 $array = array(
@@ -100,14 +99,16 @@ class Cabstract extends Admin_Controller {
                 $this->cabstract_m->insert_cabstract($array);
 
                
-                $this->abstrachemail($array,$this->data['conference'],$this->session->userdata('email'));
-                $this->session->set_flashdata('success', $this->lang->line('menu_success'));
-                redirect(base_url("dashboard/user"));
+                //$this->abstrachemail($array,$this->data['conference'],$this->session->userdata('email'));
+                $returnArray1 = [ 'return' => true, 'message' => 'Success' ];
+                echo json_encode($returnArray1);
             }
+        }else{
+            $this->data["subview"] = "/cabstract/submit";
+        $this->load->view('_layout_frontend', $this->data);
         }
 
-        $this->data["subview"] = "/cabstract/submit";
-        $this->load->view('_layout_frontend', $this->data);
+        
     }
 
     public function active() {
